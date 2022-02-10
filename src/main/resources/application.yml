@@ -1,10 +1,10 @@
 
 spring:
     mail:
-        host: <mail-server>
-        port: <mail-server-port>
-        username: <mail-username>
-        password: <mail-password>
+        host: ${MAIL_SERVER_ADDR}
+        port: ${MAIL_SERVER_PORT}
+        username: ${MAIL_USER}
+        password: ${MAIL_PASSWORD}
         properties:
             mail:
                 smtp:
@@ -12,9 +12,9 @@ spring:
                     starttls:
                         enable: true
     datasource:
-        url: jdbc:postgresql://localhost:5432/postgres
-        username: <database-username>
-        password: <database-password>
+        url: ${POSTGRES_URL}
+        username: ${POSTGRES_USER}
+        password: ${POSTGRES_PASSWORD}
     jpa:
         hibernate:
             ddl-auto: update
@@ -51,7 +51,7 @@ bucket4j:
 
 custom:
     mail:
-        target: <target-mail-address>
+        target: ${MAIL_TARGET_ADDR}
 
 # https://awesomeopensource.com/project/MarcGiffing/bucket4j-spring-boot-starter
 # https://www.baeldung.com/spring-bucket4j
