@@ -1,0 +1,58 @@
+
+spring:
+    mail:
+        host: <mail-server>
+        port: <mail-server-port>
+        username: <mail-username>
+        password: <mail-password>
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: <database-username>
+        password: <database-password>
+    jpa:
+        hibernate:
+            ddl-auto: update
+        defer-datasource-initialization: true
+        properties:
+            hibernate:
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+
+        open-in-view: false
+
+    cache:
+        jcache:
+            provider: org.ehcache.jsr107.EhcacheCachingProvider
+        cache-names:
+            - buckets
+        caffeine:
+            spec: maximumSize=100000,expireAfterAccess=3600s
+
+
+bucket4j:
+    enabled: true
+    filters:
+        - cache-name: buckets
+          http-response-body: "{ \"status\": 429, \"error\": \"Too Many Requests\", \"message\": \"You have exhausted your API Request Quota\" }"
+          url: .*
+          rate-limits:
+              - expression: getRemoteAddr()
+                bandwidths:
+                    - capacity: 10
+                      time: 1
+                      unit: hours
+
+custom:
+    mail:
+        target: <target-mail-address>
+
+# https://awesomeopensource.com/project/MarcGiffing/bucket4j-spring-boot-starter
+# https://www.baeldung.com/spring-bucket4j
+# https://github.com/MarcGiffing/bucket4j-spring-boot-starter-examples/blob/master/bucket4j-spring-boot-starter-example-caffeine/src/main/resources/application.yml
