@@ -4,6 +4,7 @@
 This tool converts a POST request into a mail.
 A user can upload a file via http,
 which will be forwarded by mail to a statically defined mail address.
+The upload form is available at the address `localhost:8080/form`.
 
 An API interface is provided for this purpose: 
 ```shell
@@ -36,4 +37,5 @@ This is stored for three days.
 If an attempt is made to send the same file again during this time, this is blocked.
 This prevents the recipient from receiving the same file more than once.
 
-
+## Todo
+- SSL

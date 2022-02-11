@@ -29,7 +29,7 @@ class MailService(private val documentService: DocumentService,
     @Value("\${custom.mail.target}")
     private val targetAddr = ""
 
-    fun sendMailWithAttachment(attachment: MultipartFile, clientAddr: String){
+    fun sendMailWithAttachment(attachment: MultipartFile, uploadModel: UploadModel, clientAddr: String){
 
         documentService.checkFileSize(attachment, FileSize(20, Unit.MB))
         documentService.deleteOldEntries(LocalDateTime.now().minusDays(3))
@@ -44,7 +44,7 @@ class MailService(private val documentService: DocumentService,
         }
 
         documentService.saveDocumentHash(attachment, clientAddr)
-       // emilService.sendMessageWithAttachment(targetAddr, "Yayy", "et voila", Util.multipartToFile(attachment),attachment.originalFilename?:"unknown")
+        //emilService.sendMessageWithAttachment(targetAddr, uploadModel, Util.multipartToFile(attachment),attachment.originalFilename?:"unknown")
         logger.info("Mail sent with attachment ${attachment.originalFilename} to $targetAddr")
 
         }
@@ -56,7 +56,7 @@ class DocumentService(private val documentRepository: DocumentRepository){
 
     fun checkFileSize(attachment: MultipartFile, maxSize: FileSize){
         if(Util.fileTooLarge(attachment, maxSize)){
-            throw FileTooLargeException()
+            throw FileTooLargeException(maxSize)
         }
     }
 

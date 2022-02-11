@@ -1,13 +1,11 @@
 package ch.tvlla.mailsender.mail
 
+import ch.tvlla.mailsender.document.UploadModel
 import java.io.File
 import java.io.IOException
 import javax.mail.MessagingException
 
 
-/**
- * Created by Olga on 8/22/2016.
- */
 interface EmailService {
     fun sendSimpleMessage(
         to: String?,
@@ -23,8 +21,7 @@ interface EmailService {
 
     fun sendMessageWithAttachment(
         to: String,
-        subject: String,
-        text: String,
+        content: UploadModel,
         attachment: File,
         filename: String
     )
@@ -35,13 +32,5 @@ interface EmailService {
         subject: String?,
         templateModel: Map<String?, Any?>?
     )
-/*
-    @Throws(IOException::class, TemplateException::class, MessagingException::class)
-    fun sendMessageUsingFreemarkerTemplate(
-        to: String?,
-        subject: String?,
-        templateModel: Map<String?, Any?>?
-    )
 
- */
 }

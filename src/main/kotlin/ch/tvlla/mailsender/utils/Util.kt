@@ -1,14 +1,11 @@
 package ch.tvlla.mailsender.utils
 
+import ch.tvlla.mailsender.document.UploadModel
 import org.slf4j.Logger
 import org.springframework.web.multipart.MultipartFile
 import java.io.File
-import java.io.IOException
-import java.io.InputStream
-import java.nio.charset.Charset
 import java.security.MessageDigest
 import java.util.zip.CRC32
-import java.util.zip.CheckedInputStream
 import javax.servlet.http.HttpServletRequest
 
 
@@ -44,6 +41,8 @@ class Util {
             multipartFile.transferTo(convFile)
             return convFile
         }
+
+        fun getMailText(content: UploadModel): String = "You received a file from ${content.name}: <br> ${content.text}"
 
     }
 }

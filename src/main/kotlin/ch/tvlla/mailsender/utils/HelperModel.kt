@@ -9,6 +9,9 @@ class FileSize(private val size: Double, private val unit: Unit){
         get() =  size * 10.0.pow(unit.potency)
 
     fun convertTo(targetUnit: Unit) = bytes / 10.0.pow(targetUnit.potency.toDouble())
+    override fun toString(): String {
+        return "${convertTo(Unit.MB)} MB"
+    }
 }
 
 enum class Unit(val potency: Int){

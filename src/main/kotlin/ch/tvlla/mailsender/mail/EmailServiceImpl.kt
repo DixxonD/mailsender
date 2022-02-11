@@ -1,5 +1,7 @@
 package ch.tvlla.mailsender.mail
 
+import ch.tvlla.mailsender.document.UploadModel
+import ch.tvlla.mailsender.utils.Util
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.io.FileSystemResource
 import org.springframework.mail.SimpleMailMessage
@@ -36,17 +38,17 @@ class EmailServiceImpl : EmailService {
         TODO("Not yet implemented")
     }
 
-    override fun sendMessageWithAttachment(to: String, subject: String, text: String, attachment: File, filename: String){
+    override fun sendMessageWithAttachment(to: String, content: UploadModel, attachment: File, filename: String){
 
         val message = MimeMessagePreparator(){
             it.setRecipient(Message.RecipientType.TO, InternetAddress(to))
             it.setFrom(InternetAddress("test@helloWorld.com"))
-            it.subject = subject
+            it.subject = "File upload from ${content.name}"
 
             val helper = MimeMessageHelper(it, true)
             val file = FileSystemResource(attachment)
             helper.addAttachment(filename, file)
-            helper.setText(text, true)
+            helper.setText(Util.getMailText(content), true)
         }
      emailSender.send(message)
     }

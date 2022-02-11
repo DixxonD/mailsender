@@ -1,14 +1,15 @@
 package ch.tvlla.mailsender.exception
 
+import ch.tvlla.mailsender.utils.FileSize
 open class CustomException(): RuntimeException(){
 
 }
 
-class FileTooLargeException: CustomException() {
-    override val message = "File too large."
+class FileTooLargeException(maxSize: FileSize): CustomException() {
+    override val message = "Die hochgeladene Datei ist zu gross. Maximal erlaubt sind $maxSize"
 
 }
 
 class AttachmentAlreadySendException: CustomException(){
-    override val message = "File already send"
+    override val message = "Diese Datei wurde bereits hochgeladen."
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <title>Send Attachment</title>
+</head>
+<body>
+<h1>Upload File</h1>
+<form action="/send" method="POST" enctype="multipart/form-data">
+    <label for="fname">Name</label><br>
+    <input type="text" id="fname" name="name"><br>
+    <label for="ftext">Anmerkungen</label><br>
+    <textarea id="ftext"  rows="12" cols="50" name="text"></textarea><br>
+    <input type="file" id="file" name="file"><br><br>
+    <input type="submit" value="Upload" >
+
+</form>
+</body>
+</html>
