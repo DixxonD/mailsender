@@ -25,7 +25,7 @@ $ docker-compose up
 
 ## Security
 ### SSL
-Not implemented yet. Will follow at a later time.
+Currently the ssl connection is not enforced yet (this will change).
 
 ### Rate Limit
 The api allows only a certain number of requests per time unit and per IP address.
@@ -37,5 +37,4 @@ This is stored for three days.
 If an attempt is made to send the same file again during this time, this is blocked.
 This prevents the recipient from receiving the same file more than once.
 
-## Todo
-- SSL
+

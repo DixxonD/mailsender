@@ -58,6 +58,11 @@ bucket4j:
 server:
     tomcat:
         max-swallow-size: -1
+    ssl:
+        key-store: classpath:mycert.p12
+        key-store-password: 123456
+        keyStoreType: PKCS12
+
 
 custom:
     mail:
