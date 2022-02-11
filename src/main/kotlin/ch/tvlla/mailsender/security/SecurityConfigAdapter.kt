@@ -18,6 +18,7 @@ class SecurityConfigAdapter() : WebSecurityConfigurerAdapter() {
     override fun  configure(http: HttpSecurity){
         http
             .csrf().disable()
+            .headers().frameOptions().disable()
     }
 
     @Bean
