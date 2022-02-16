@@ -19,7 +19,6 @@
     <properties>
         <java.version>11</java.version>
         <kotlin.version>1.5.31</kotlin.version>
-        <start-class>ch.tvlla.mailsender.MailSenderApplication</start-class>
     </properties>
 
 
@@ -106,7 +105,7 @@
         <dependency>
             <groupId>org.jobrunr</groupId>
             <artifactId>jobrunr-spring-boot-starter</artifactId>
-            <version>4.0.7</version>
+            <version>4.0.8</version>
         </dependency>
 
         <!-- HTML Parser -->
