@@ -74,7 +74,7 @@ class HTMLParser(){
 
         private fun getGrandParent(element: Element): Optional<Element> {
             if(element.parent() == null) return Optional.empty()
-            val grandparent = element.parent().parent() ?: return Optional.empty()
+            val grandparent = element.parent()?.parent() ?: return Optional.empty()
             return Optional.of(grandparent)
         }
 
@@ -83,7 +83,7 @@ class HTMLParser(){
             if(resultBlock.isEmpty) return "unknown discipline"
             val runBlock = resultBlock.get().parent() ?: return "unknown discipline"
             val listHeader = runBlock.previousElementSibling()
-            return listHeader.select("a").text()
+            return listHeader?.select("a")?.text() ?: return "unknown discipline"
         }
 
         private fun getCompetitionID(path: String) = path.split("/").last()
@@ -95,8 +95,9 @@ class HTMLParser(){
             return Result(0, result, name, discipline, competition, info, LocalDateTime.now())
         }
 
-        private fun getDataFromResultBlock(entryLine: Element, colKey: String, lineKey: String) =
-            entryLine.getElementsByClass(colKey).first().getElementsByClass(lineKey).text()
+        private fun getDataFromResultBlock(entryLine: Element, colKey: String, lineKey: String) : String {
+         return entryLine.getElementsByClass(colKey).first()?.getElementsByClass(lineKey)?.text() ?:  "unknown"
+        }
 
     }
 
