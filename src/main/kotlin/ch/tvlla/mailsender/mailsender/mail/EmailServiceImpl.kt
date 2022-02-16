@@ -50,7 +50,10 @@ class EmailServiceImpl : EmailService {
             helper.addAttachment(filename, file)
             helper.setText(Util.getMailText(content), true)
         }
-     emailSender.send(message)
+
+        emailSender.send(message)
+
+
     }
 
 

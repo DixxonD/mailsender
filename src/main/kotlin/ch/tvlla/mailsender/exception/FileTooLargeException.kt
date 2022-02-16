@@ -1,4 +1,4 @@
-package ch.tvlla.exception
+package ch.tvlla.mailsender.exception
 
 import ch.tvlla.mailsender.mailsender.utils.FileSize
 open class CustomException(): RuntimeException(){

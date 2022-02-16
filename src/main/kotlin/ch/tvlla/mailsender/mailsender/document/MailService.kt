@@ -1,7 +1,7 @@
 package ch.tvlla.mailsender.mailsender.document;
 
-import ch.tvlla.exception.AttachmentAlreadySendException
-import ch.tvlla.exception.FileTooLargeException
+import ch.tvlla.mailsender.exception.AttachmentAlreadySendException
+import ch.tvlla.mailsender.exception.FileTooLargeException
 import ch.tvlla.mailsender.mailsender.mail.EmailServiceImpl
 import ch.tvlla.mailsender.mailsender.utils.FileSize
 import ch.tvlla.mailsender.mailsender.utils.Unit
@@ -21,7 +21,8 @@ import java.util.*
 @Service
 class MailService(private val documentService: DocumentService,
                   private val documentMonitor: DocumentMonitor,
-                  private val emilService: EmailServiceImpl) {
+                  private val emilService: EmailServiceImpl
+) {
 
     private val logger: Logger = LoggerFactory.getLogger(MailService::class.java)
 
@@ -43,7 +44,7 @@ class MailService(private val documentService: DocumentService,
         }
 
         documentService.saveDocumentHash(attachment, clientAddr)
-        //emilService.sendMessageWithAttachment(targetAddr, uploadModel, Util.multipartToFile(attachment),attachment.originalFilename?:"unknown")
+        emilService.sendMessageWithAttachment(targetAddr, uploadModel, Util.multipartToFile(attachment),attachment.originalFilename?:"unknown")
         logger.info("Mail sent with attachment ${attachment.originalFilename} to $targetAddr")
 
         }

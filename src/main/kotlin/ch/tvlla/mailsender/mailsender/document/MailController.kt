@@ -1,5 +1,5 @@
-import ch.tvlla.mailsender.mailsender.document.UploadModel
-import ch.tvlla.mailsender.mailsender.document.MailService
+package ch.tvlla.mailsender.mailsender.document
+
 import ch.tvlla.mailsender.mailsender.utils.Util
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile
 import javax.servlet.http.HttpServletRequest
 
 @Controller
-class MailController(private val request: HttpServletRequest, private val mailService: MailService /*  private val mailService: EmailServiceImpl*/) {
+class MailController(private val request: HttpServletRequest, private val mailService: MailService) {
 
     private val logger: Logger = LoggerFactory.getLogger(MailController::class.java)
 
