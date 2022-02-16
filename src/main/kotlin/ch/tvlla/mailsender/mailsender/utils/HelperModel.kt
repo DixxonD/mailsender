@@ -1,4 +1,4 @@
-package ch.tvlla.mailsender.utils
+package ch.tvlla.mailsender.mailsender.utils
 
 import kotlin.math.pow
 

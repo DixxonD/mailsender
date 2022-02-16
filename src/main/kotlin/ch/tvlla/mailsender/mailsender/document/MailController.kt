@@ -1,6 +1,6 @@
-package ch.tvlla.mailsender.document
-
-import ch.tvlla.mailsender.utils.Util
+import ch.tvlla.mailsender.mailsender.document.UploadModel
+import ch.tvlla.mailsender.mailsender.document.MailService
+import ch.tvlla.mailsender.mailsender.utils.Util
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus

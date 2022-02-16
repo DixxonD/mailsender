@@ -27,6 +27,8 @@ $ docker-compose up
 ### SSL
 Currently the ssl connection is not enforced yet (this will change).
 
+https://mkyong.com/spring-boot/spring-boot-ssl-https-examples/
+
 ### Rate Limit
 The api allows only a certain number of requests per time unit and per IP address.
 The behavior can be defined in `application.yml`.

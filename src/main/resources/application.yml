@@ -68,6 +68,13 @@ custom:
     mail:
         target: ${MAIL_TARGET_ADDR}
 
+org:
+    jobrunr:
+      background-job-server:
+          enabled: true
+      dashboard:
+          enabled: true
+          port: 8081
 # https://awesomeopensource.com/project/MarcGiffing/bucket4j-spring-boot-starter
 # https://www.baeldung.com/spring-bucket4j
 # https://github.com/MarcGiffing/bucket4j-spring-boot-starter-examples/blob/master/bucket4j-spring-boot-starter-example-caffeine/src/main/resources/application.yml

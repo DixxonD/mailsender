@@ -1,4 +1,4 @@
-package ch.tvlla.mailsender.document;
+package ch.tvlla.mailsender.mailsender.document;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

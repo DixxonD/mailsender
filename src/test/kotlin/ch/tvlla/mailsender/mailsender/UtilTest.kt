@@ -1,8 +1,8 @@
 package ch.tvlla.mailsender
 
-import ch.tvlla.mailsender.utils.FileSize
-import ch.tvlla.mailsender.utils.Unit
-import ch.tvlla.mailsender.utils.Util
+import ch.tvlla.mailsender.mailsender.utils.FileSize
+import ch.tvlla.mailsender.mailsender.utils.Unit
+import ch.tvlla.mailsender.mailsender.utils.Util
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test

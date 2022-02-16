@@ -1,11 +1,11 @@
-package ch.tvlla.mailsender.document
+package ch.tvlla.mailsender.mailsender.document;
 
-import ch.tvlla.mailsender.exception.AttachmentAlreadySendException
-import ch.tvlla.mailsender.exception.FileTooLargeException
-import ch.tvlla.mailsender.mail.EmailServiceImpl
-import ch.tvlla.mailsender.utils.FileSize
-import ch.tvlla.mailsender.utils.Unit
-import ch.tvlla.mailsender.utils.Util
+import ch.tvlla.exception.AttachmentAlreadySendException
+import ch.tvlla.exception.FileTooLargeException
+import ch.tvlla.mailsender.mailsender.mail.EmailServiceImpl
+import ch.tvlla.mailsender.mailsender.utils.FileSize
+import ch.tvlla.mailsender.mailsender.utils.Unit
+import ch.tvlla.mailsender.mailsender.utils.Util
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
-import java.io.File
 
 import java.time.LocalDateTime
 import java.time.ZoneOffset

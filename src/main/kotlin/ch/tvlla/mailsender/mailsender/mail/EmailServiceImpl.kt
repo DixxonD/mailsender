@@ -1,7 +1,7 @@
-package ch.tvlla.mailsender.mail
+package ch.tvlla.mailsender.mailsender.mail
 
-import ch.tvlla.mailsender.document.UploadModel
-import ch.tvlla.mailsender.utils.Util
+import ch.tvlla.mailsender.mailsender.document.UploadModel
+import ch.tvlla.mailsender.mailsender.utils.Util
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.io.FileSystemResource
 import org.springframework.mail.SimpleMailMessage

@@ -1,4 +1,4 @@
-package ch.tvlla.mailsender.document
+package ch.tvlla.mailsender.mailsender.document
 
 data class UploadModel(
     val name: String,

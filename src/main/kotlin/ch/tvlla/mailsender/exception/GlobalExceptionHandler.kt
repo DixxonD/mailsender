@@ -1,7 +1,7 @@
-package ch.tvlla.mailsender.exception
+package ch.tvlla.exception
 
-import ch.tvlla.mailsender.utils.FileSize
-import ch.tvlla.mailsender.utils.Unit
+import ch.tvlla.mailsender.mailsender.utils.FileSize
+import ch.tvlla.mailsender.mailsender.utils.Unit
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice

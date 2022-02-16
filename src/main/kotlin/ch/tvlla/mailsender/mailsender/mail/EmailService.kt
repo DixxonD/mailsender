@@ -1,6 +1,6 @@
-package ch.tvlla.mailsender.mail
+package ch.tvlla.mailsender.mailsender.mail
 
-import ch.tvlla.mailsender.document.UploadModel
+import ch.tvlla.mailsender.mailsender.document.UploadModel
 import java.io.File
 import java.io.IOException
 import javax.mail.MessagingException

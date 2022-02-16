@@ -1,4 +1,4 @@
-package ch.tvlla.mailsender.exception
+package ch.tvlla.exception
 
 class InvalidRequestException : RuntimeException {
     constructor() : super() {}

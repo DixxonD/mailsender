@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultate</title>
+    <link th:href="@{/styles/tvlstyle.css}" rel="stylesheet"/>
+</head>
+<body>
+
+        <div  th:each="entry, stat : ${allResults}">
+
+            <h2 th:text="${entry.key}">COMPETITION</h2>
+            <div class="grid-container">
+                <div class="unit grid-item" th:each="entryDiscipline, statDiscipline : ${entry.value}">
+                    <div class="subtitle">
+                        <b><span class="disciplineHeader" th:text="${entryDiscipline.key}">DISCIPLINE</span></b>
+                    </div>
+
+                        <table>
+                            <tbody>
+                                <tr th:each="result: ${entryDiscipline.value}">
+                                    <td><span class="resultLine" th:text="${result.name}">Name</span> </td>
+                                    <td><b><span class="resultLine" th:text="${result.result}">Leistung</span></b></td>
+                                    <td><span  class="resultLine" th:text="${result.info}">Info</span> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>
