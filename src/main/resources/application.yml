@@ -82,4 +82,4 @@ org:
 
 logging:
     file:
-        name: ~/tvl-mailsender.log
+        name: ${LOG_FILE_PATH}
