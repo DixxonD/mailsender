@@ -3,6 +3,8 @@ package ch.tvlla.mailsender.resultCollector
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import java.time.LocalDateTime
 import java.util.*
 
@@ -30,7 +32,7 @@ class HTMLParser(){
             doc.getElementsByClass(COMPETITION_TABLE)
                 .select("tr")
                 .forEach {
-                    if(it.select("a").size == 3){
+                    if(it.select("a").size >= 3){
                         resultList.add(getEventFromCompetitionTable(it))
                     }
                 }
@@ -45,7 +47,6 @@ class HTMLParser(){
             val clubDivs = doc.getElementsContainingOwnText(club)
 
             for(clubDiv in clubDivs){
-
                 val entryLine = getGrandParent(clubDiv)
                 if(entryLine.isEmpty) continue
                 val discipline = getDisciplineFromEntryLine(entryLine.get())

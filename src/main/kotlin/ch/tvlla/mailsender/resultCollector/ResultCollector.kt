@@ -23,6 +23,7 @@ class ResultCollector(private val resultRepository: ResultRepository){
         logger.info("Starts collecting data...")
         val competitions = HTMLParser.getCompetitions()
         val allResults = mutableListOf<Result>()
+        logger.info("number competitions found: ${competitions.size}")
         competitions.forEach { competition ->
             val doc = HTMLParser.getDocument(RESULT_OVERVIEW, competition.id)
             allResults.addAll(HTMLParser.getResultsByClub(doc, competition.description, club))

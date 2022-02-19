@@ -18,6 +18,7 @@ services:
                 restart: always
                 ports:
                         - "8080:8080"
+
                 depends_on:
                         - database
                 environment:
@@ -29,6 +30,7 @@ services:
                         - MAIL_USER=<your-mail-addr>
                         - MAIL_PASSWORD=<your-mail-passwd>
                         - MAIL_TARGET_ADDR=<your-target-mail-addr>
+                        - LOG_FILE_PATH=/home/mailsender/mailsender.log
                 networks:
                         - mailsendnetwork
 networks:
