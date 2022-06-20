@@ -15,7 +15,7 @@ For sending mails the credentials of a mail provider have to be specified.
 A simple way to send mails automatically is provided by Gmail. 
 The corresponding information can be defined in `docker-compose.yml`.
 
-Furthermore, the project contains code to automatically compile and display competition results of the own club colleague. The corresponding HTML page is displayed via the path `/results`. 
+Furthermore, the project contains code to automatically collect and display competition results of the own club colleagues. The corresponding HTML page is displayed via the path `/results`. 
 The search criteria are currently not parameterized, because it is only a proof of concept for the club board and will probably soon be revised anyway and moved to a separate project. And yes, the look is not the prettiest ;-)
 
 
